@@ -1,0 +1,40 @@
+name: Release
+
+# Creates a GitHub release with the plugin files attached whenever a version
+# tag is pushed. Tag must match the version in manifest.json exactly (no "v"
+# prefix), as required by the Obsidian community plugin directory.
+
+on:
+  push:
+    tags: ["*"]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Verify tag matches manifest version
+        run: |
+          tag="${GITHUB_REF#refs/tags/}"
+          version="$(python3 -c "import json;print(json.load(open('manifest.json'))['version'])")"
+          if [ "$tag" != "$version" ]; then
+            echo "Tag $tag does not match manifest.json version $version" >&2
+            exit 1
+          fi
+
+      - name: Create release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          tag="${GITHUB_REF#refs/tags/}"
+          if gh release view "$tag" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            echo "Release $tag already exists, uploading assets only."
+            gh release upload "$tag" main.js manifest.json styles.css --clobber --repo "$GITHUB_REPOSITORY"
+          else
+            gh release create "$tag" main.js manifest.json styles.css \
+              --title "$tag" --generate-notes --repo "$GITHUB_REPOSITORY"
+          fi

@@ -1,0 +1,46 @@
+.folder-reader {
+  max-width: var(--file-line-width, 44rem);
+  margin: 0 auto;
+  padding-bottom: 6rem;
+}
+
+.folder-reader-header {
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid var(--background-modifier-border);
+  padding-bottom: 0.75rem;
+}
+
+.folder-reader-header h1 {
+  margin: 0 0 0.25rem;
+}
+
+.folder-reader-count {
+  color: var(--text-muted);
+  font-size: var(--font-smaller);
+}
+
+.folder-reader-note {
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.folder-reader-note:last-child {
+  border-bottom: none;
+}
+
+.folder-reader-title {
+  cursor: pointer;
+  color: var(--text-accent);
+  margin: 0 0 0.5rem;
+}
+
+.folder-reader-title:hover {
+  text-decoration: underline;
+}
+
+.folder-reader-sentinel {
+  text-align: center;
+  color: var(--text-faint);
+  padding: 1rem 0;
+}

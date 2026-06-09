@@ -1,0 +1,10 @@
+{
+  "id": "folder-reader",
+  "name": "Folder Reader",
+  "version": "1.0.0",
+  "minAppVersion": "1.4.0",
+  "description": "Read all notes in a folder together as one continuous scrolling view.",
+  "author": "Arseniy Seroka",
+  "authorUrl": "https://github.com/jagajaga",
+  "isDesktopOnly": false
+}
