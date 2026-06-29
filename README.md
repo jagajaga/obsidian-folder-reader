@@ -6,7 +6,7 @@ All the Markdown notes directly inside a folder, rendered one after another in a
 single tab, in name order — like one long document. Perfect for journals, chat
 archives, meeting notes, or book chapters you'd rather *read* than click through.
 
-<!-- screenshots: add docs/reader.png here -->
+![Folder Reader — every note in a folder rendered one after another as a single continuous page](docs/reader.png)
 
 ## Features
 
