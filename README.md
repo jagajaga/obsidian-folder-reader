@@ -45,7 +45,7 @@ Notes:
 ### Community plugins (recommended)
 
 Search for **Folder Reader** in *Settings → Community plugins → Browse* and
-install it. *(Pending directory approval.)*
+install it.
 
 ### BRAT
 
@@ -90,9 +90,11 @@ Releases are automated: pushing a tag that matches the version in
 
 ## Related
 
-If you also want to *publish* folders of notes to the web with private,
-unguessable URLs, see
-[Private Quartz Publish](https://github.com/jagajaga/private-quartz-publish).
+- [File Media Gallery](https://github.com/jagajaga/obsidian-file-media-gallery) —
+  view all the media a note references (vault files + external/S3 URLs) as a
+  gallery with per-type tabs and a lightbox.
+- [Private Quartz Publish](https://github.com/jagajaga/private-quartz-publish) —
+  publish folders of notes to the web with private, unguessable URLs.
 
 ## License
 
